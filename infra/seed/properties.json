@@ -1,0 +1,22 @@
+﻿[
+  { "IdOwner": "OWN-001", "Name": "Sunset Park Loft", "AddressProperty": "742 Evergreen Terrace, Springfield", "PriceProperty": 250000, "Image": "https://picsum.photos/id/1018/800/600" },
+  { "IdOwner": "OWN-002", "Name": "Downtown Studio", "AddressProperty": "123 Main St, Metropolis", "PriceProperty": 180000, "Image": "https://picsum.photos/id/1025/800/600" },
+  { "IdOwner": "OWN-003", "Name": "Lakeside Villa", "AddressProperty": "55 Lakeview Dr, Smallville", "PriceProperty": 520000, "Image": "https://picsum.photos/id/1035/800/600" },
+  { "IdOwner": "OWN-004", "Name": "Riverside House", "AddressProperty": "10 River Rd, Gotham", "PriceProperty": 390000, "Image": "https://picsum.photos/id/1043/800/600" },
+  { "IdOwner": "OWN-005", "Name": "Mountain Cabin", "AddressProperty": "88 Pine Trail, Twin Peaks", "PriceProperty": 310000, "Image": "https://picsum.photos/id/1050/800/600" },
+  { "IdOwner": "OWN-006", "Name": "City Penthouse", "AddressProperty": "450 Skyline Ave, Metropolis", "PriceProperty": 820000, "Image": "https://picsum.photos/id/1062/800/600" },
+  { "IdOwner": "OWN-007", "Name": "Suburban Home", "AddressProperty": "900 Oak St, Sunnyvale", "PriceProperty": 280000, "Image": "https://picsum.photos/id/1074/800/600" },
+  { "IdOwner": "OWN-008", "Name": "Cozy Bungalow", "AddressProperty": "77 Maple Ave, Riverdale", "PriceProperty": 215000, "Image": "https://picsum.photos/id/1084/800/600" },
+  { "IdOwner": "OWN-009", "Name": "Seaside Cottage", "AddressProperty": "12 Ocean View, Bayside", "PriceProperty": 455000, "Image": "https://picsum.photos/id/109/800/600" },
+  { "IdOwner": "OWN-010", "Name": "Old Town Flat", "AddressProperty": "5 Plaza Mayor, Oldtown", "PriceProperty": 195000, "Image": "https://picsum.photos/id/110/800/600" },
+  { "IdOwner": "OWN-011", "Name": "Garden Duplex", "AddressProperty": "31 Rose Lane, Star City", "PriceProperty": 335000, "Image": "https://picsum.photos/id/111/800/600" },
+  { "IdOwner": "OWN-012", "Name": "Modern Loft", "AddressProperty": "22 Tech Park, Silicon Hills", "PriceProperty": 370000, "Image": "https://picsum.photos/id/112/800/600" },
+  { "IdOwner": "OWN-013", "Name": "Golf Course Villa", "AddressProperty": "9 Fairway Dr, Greenfield", "PriceProperty": 640000, "Image": "https://picsum.photos/id/113/800/600" },
+  { "IdOwner": "OWN-014", "Name": "Country House", "AddressProperty": "Km 12 Ruta 7, Countryside", "PriceProperty": 260000, "Image": "https://picsum.photos/id/114/800/600" },
+  { "IdOwner": "OWN-015", "Name": "Harbor Apartment", "AddressProperty": "4 Pier St, Harbor City", "PriceProperty": 300000, "Image": "https://picsum.photos/id/115/800/600" },
+  { "IdOwner": "OWN-016", "Name": "Campus Studio", "AddressProperty": "99 College Rd, University Town", "PriceProperty": 160000, "Image": "https://picsum.photos/id/116/800/600" },
+  { "IdOwner": "OWN-017", "Name": "Skyline Condo", "AddressProperty": "700 Tower Blvd, Capital City", "PriceProperty": 510000, "Image": "https://picsum.photos/id/117/800/600" },
+  { "IdOwner": "OWN-018", "Name": "Forest Retreat", "AddressProperty": "12 Cedar Grove, Evergreen", "PriceProperty": 345000, "Image": "https://picsum.photos/id/118/800/600" },
+  { "IdOwner": "OWN-019", "Name": "Desert Ranch", "AddressProperty": "Route 66, Desert Valley", "PriceProperty": 275000, "Image": "https://picsum.photos/id/119/800/600" },
+  { "IdOwner": "OWN-020", "Name": "Lakeview Apartment", "AddressProperty": "500 Blue Lake Rd, Waterfall", "PriceProperty": 330000, "Image": "https://picsum.photos/id/120/800/600" }
+]

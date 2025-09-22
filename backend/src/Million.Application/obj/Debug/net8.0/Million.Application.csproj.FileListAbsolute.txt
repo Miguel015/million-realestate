@@ -1,0 +1,15 @@
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\bin\Debug\net8.0\Million.Application.deps.json
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\bin\Debug\net8.0\Million.Application.dll
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\bin\Debug\net8.0\Million.Application.pdb
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\bin\Debug\net8.0\Million.Domain.dll
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\bin\Debug\net8.0\Million.Domain.pdb
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.csproj.AssemblyReference.cache
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.AssemblyInfoInputs.cache
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.AssemblyInfo.cs
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.csproj.CoreCompileInputs.cache
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million..D7ABA82E.Up2Date
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.dll
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\refint\Million.Application.dll
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.pdb
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\ref\Million.Application.dll
