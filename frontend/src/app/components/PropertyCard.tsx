@@ -1,80 +1,55 @@
+// src/app/components/PropertyCard.tsx
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import type { PropertyDto } from "@/app/lib/api";
 
-function highlight(text: string, needle: string) {
-  if (!needle) return text;
-  const parts = text.split(new RegExp(`(${needle})`, "ig"));
-  return parts.map((p, i) =>
-    p.toLowerCase() === needle.toLowerCase()
-      ? <mark key={i} className="rounded bg-yellow-300/30 px-1">{p}</mark>
-      : <span key={i}>{p}</span>
-  );
-}
-
-function isValidObjectId(id?: string) {
-  return !!id && /^[0-9a-fA-F]{24}$/.test(id);
-}
+const currency = (v?: number | string | null) => {
+  const n = typeof v === "number" ? v : v ? Number(v) : NaN;
+  if (!Number.isFinite(n)) return "$0";
+  return `$${n.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
+};
 
 export default function PropertyCard({
-  p, qName, qAddress,
-}: { p: PropertyDto; qName?: string; qAddress?: string }) {
-
-  const href = isValidObjectId(p.id) ? `/property/${p.id}` : undefined;
-
-  const CardInner = (
-    <>
-      <div className="relative aspect-[4/3]">
-        <Image
-          src={p.image}
-          alt={p.name}
-          fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover"
-        />
-        <span className="absolute left-2 top-2 rounded-full bg-black/60 px-2 py-1 text-xs text-white">
-          New
-        </span>
-      </div>
-      <div className="space-y-1 p-3">
-        <h3 className="line-clamp-2 text-base font-semibold">
-          {highlight(p.name, qName ?? "")}
-        </h3>
-        <p className="line-clamp-1 text-sm text-zinc-400">
-          {highlight(p.addressProperty, qAddress ?? "")}
-        </p>
-        <p className="text-sm font-bold">${new Intl.NumberFormat("en-US").format(p.priceProperty)}</p>
-      </div>
-    </>
-  );
+  p,
+  qName,
+  qAddress,
+}: {
+  p: PropertyDto;
+  qName?: string;
+  qAddress?: string;
+}) {
+  const href = `/property/${p.id}`;
+  const img = p.image ?? "https://picsum.photos/seed/hotel/800/600";
 
   return (
-    <motion.div
+    <motion.article
       layout
-      variants={{ hidden: { opacity: 0, y: 8, scale: .98 }, show: { opacity: 1, y: 0, scale: 1 } }}
-      initial="hidden"
-      animate="show"
-      exit="hidden"
-      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      className="group overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/70"
     >
-      {href ? (
-        <Link
-          href={href}
-          className="group block overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-        >
-          {CardInner}
-        </Link>
-      ) : (
-        <div
-          className="group block cursor-not-allowed overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 opacity-80"
-          title="No detail available"
-        >
-          {CardInner}
+      <Link href={href} className="block">
+        <div className="relative aspect-[4/3]">
+          <Image
+            src={img}
+            alt={p.name}
+            fill
+            sizes="(max-width:768px) 100vw, 25vw"
+            className="object-cover transition-transform group-hover:scale-[1.02]"
+            priority={false}
+          />
+          <span className="absolute left-2 top-2 rounded-md bg-emerald-600/80 px-2 py-0.5 text-[10px] font-semibold">
+            New
+          </span>
         </div>
-      )}
-    </motion.div>
+
+        <div className="p-3">
+          <h3 className="line-clamp-1 text-sm font-semibold">{p.name}</h3>
+          <p className="mt-1 line-clamp-1 text-xs text-zinc-400">{p.address}</p>
+          <div className="mt-2 text-sm font-semibold">{currency(p.price)}</div>
+        </div>
+      </Link>
+    </motion.article>
   );
 }
