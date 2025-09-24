@@ -8,6 +8,7 @@ C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\M
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.AssemblyInfoInputs.cache
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.AssemblyInfo.cs
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.csproj.CoreCompileInputs.cache
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.sourcelink.json
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million..D7ABA82E.Up2Date
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\Million.Application.dll
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Application\obj\Debug\net8.0\refint\Million.Application.dll

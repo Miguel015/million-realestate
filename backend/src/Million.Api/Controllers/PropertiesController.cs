@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson; // para ObjectId.TryParse
-using Million.Infrastructure.Repositories; // ajusta si tu interfaz está en otro namespace
-using Million.Domain; // si usas tipos del dominio
+using Million.Infrastructure.Repositories;
 
 namespace Million.Api.Controllers;
 
@@ -9,48 +7,27 @@ namespace Million.Api.Controllers;
 [Route("api/[controller]")]
 public class PropertiesController : ControllerBase
 {
-    private readonly IPropertyRepository _repo;
+    private readonly PropertyRepository _repo;
+    public PropertiesController(PropertyRepository repo) => _repo = repo;
 
-    public PropertiesController(IPropertyRepository repo)
-    {
-        _repo = repo;
-    }
-
-    // GET /api/Properties?name=&address=&minPrice=&maxPrice=&page=&pageSize=
     [HttpGet]
     public async Task<IActionResult> Get(
         [FromQuery] string? name,
         [FromQuery] string? address,
-        [FromQuery] int? minPrice,
-        [FromQuery] int? maxPrice,
+        [FromQuery] decimal? minPrice,
+        [FromQuery] decimal? maxPrice,
         [FromQuery] int page = 1,
-        [FromQuery] int pageSize = 12)
+        [FromQuery] int pageSize = 12,
+        CancellationToken ct = default)
     {
-        // Ajusta a tu contrato real del repo
-        var result = await _repo.GetPropertiesAsync(new PropertyQuery
-        {
-            Name = name,
-            Address = address,
-            MinPrice = minPrice,
-            MaxPrice = maxPrice,
-            Page = page,
-            PageSize = pageSize
-        });
-
-        return Ok(result);
+        var (items, total) = await _repo.GetPropertiesAsync(name, address, minPrice, maxPrice, page, pageSize, ct);
+        return Ok(new { items, total, page, pageSize });
     }
 
-    // GET /api/Properties/{id}  (solo coincide con 24 hex)
-    [HttpGet("{id:length(24)}")]
-    public async Task<IActionResult> GetById(string id)
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(string id, CancellationToken ct)
     {
-        // extra-safe: si no parsea como ObjectId, 404
-        if (!ObjectId.TryParse(id, out _))
-            return NotFound();
-
-        var prop = await _repo.GetByIdAsync(id);
-        if (prop is null) return NotFound();
-
-        return Ok(prop);
+        var dto = await _repo.GetDetailAsync(id, ct);
+        return dto is null ? NotFound() : Ok(dto);
     }
 }

@@ -11,9 +11,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Million.Application\Million.Application.csproj" />
-    <ProjectReference Include="..\Million.Infrastructure\Million.Infrastructure.csproj" />
-  </ItemGroup>
+<ItemGroup>
+  <ProjectReference Include="..\Million.Infrastructure\Million.Infrastructure.csproj" />
+  <ProjectReference Include="..\Million.Application\Million.Application.csproj" />
+  <ProjectReference Include="..\Million.Domain\Million.Domain.csproj" />
+</ItemGroup>
+
 
 </Project>

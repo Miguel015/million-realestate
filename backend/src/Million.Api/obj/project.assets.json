@@ -1122,6 +1122,7 @@
     "net8.0": [
       "Microsoft.AspNetCore.OpenApi >= 8.0.20",
       "Million.Application >= 1.0.0",
+      "Million.Domain >= 1.0.0",
       "Million.Infrastructure >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
@@ -1153,6 +1154,9 @@
           "projectReferences": {
             "C:\\Users\\migue\\Documents\\Prueba Tecnica Million\\million-realestate\\backend\\src\\Million.Application\\Million.Application.csproj": {
               "projectPath": "C:\\Users\\migue\\Documents\\Prueba Tecnica Million\\million-realestate\\backend\\src\\Million.Application\\Million.Application.csproj"
+            },
+            "C:\\Users\\migue\\Documents\\Prueba Tecnica Million\\million-realestate\\backend\\src\\Million.Domain\\Million.Domain.csproj": {
+              "projectPath": "C:\\Users\\migue\\Documents\\Prueba Tecnica Million\\million-realestate\\backend\\src\\Million.Domain\\Million.Domain.csproj"
             },
             "C:\\Users\\migue\\Documents\\Prueba Tecnica Million\\million-realestate\\backend\\src\\Million.Infrastructure\\Million.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\migue\\Documents\\Prueba Tecnica Million\\million-realestate\\backend\\src\\Million.Infrastructure\\Million.Infrastructure.csproj"

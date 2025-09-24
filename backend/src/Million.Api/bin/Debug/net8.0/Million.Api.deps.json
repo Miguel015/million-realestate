@@ -10,6 +10,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "8.0.20",
           "Million.Application": "1.0.0",
+          "Million.Domain": "1.0.0",
           "Million.Infrastructure": "1.0.0",
           "Swashbuckle.AspNetCore": "6.6.2"
         },

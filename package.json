@@ -1,0 +1,8 @@
+{
+  "name": "million-realestate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "seed": "node infra/seed/seed.js"
+  }
+}

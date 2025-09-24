@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\Million.Application\Million.Application.csproj" />
-    <ProjectReference Include="..\Million.Domain\Million.Domain.csproj" />
-  </ItemGroup>
+<ItemGroup>
+  <ProjectReference Include="..\Million.Domain\Million.Domain.csproj" />
+  <ProjectReference Include="..\Million.Application\Million.Application.csproj" />
+</ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="3.5.0" />

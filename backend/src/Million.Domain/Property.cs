@@ -1,21 +1,22 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace Million.Domain.Entities;
+namespace Million.Domain;
 
-[BsonIgnoreExtraElements]
 public class Property
 {
     [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)] // <-- convierte el ObjectId de Mongo a string automáticamente
-    public string Id { get; set; } = string.Empty;
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; } = default!;
 
     public string IdOwner { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
-    public string AddressProperty { get; set; } = string.Empty;
-    public decimal PriceProperty { get; set; }
-    public string Image { get; set; } = string.Empty;
 
-    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
+    // En tu seed este campo se llama "AddressProperty"
+    public string AddressProperty { get; set; } = string.Empty;
+
+    // En tu seed es numérico entero
+    public int PriceProperty { get; set; }
+
+    public string Image { get; set; } = string.Empty;
 }

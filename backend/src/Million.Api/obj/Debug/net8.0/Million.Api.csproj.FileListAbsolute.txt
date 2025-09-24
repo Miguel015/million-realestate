@@ -19,8 +19,8 @@ C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\M
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\bin\Debug\net8.0\Million.Application.dll
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\bin\Debug\net8.0\Million.Domain.dll
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\bin\Debug\net8.0\Million.Infrastructure.dll
-C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\bin\Debug\net8.0\Million.Application.pdb
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\bin\Debug\net8.0\Million.Infrastructure.pdb
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\bin\Debug\net8.0\Million.Application.pdb
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\bin\Debug\net8.0\Million.Domain.pdb
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\obj\Debug\net8.0\Million.Api.csproj.AssemblyReference.cache
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\obj\Debug\net8.0\Million.Api.GeneratedMSBuildEditorConfig.editorconfig
@@ -29,6 +29,7 @@ C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\M
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\obj\Debug\net8.0\Million.Api.csproj.CoreCompileInputs.cache
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\obj\Debug\net8.0\Million.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\obj\Debug\net8.0\Million.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\obj\Debug\net8.0\Million.Api.sourcelink.json
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\migue\Documents\Prueba Tecnica Million\million-realestate\backend\src\Million.Api\obj\Debug\net8.0\staticwebassets\msbuild.Million.Api.Microsoft.AspNetCore.StaticWebAssets.props

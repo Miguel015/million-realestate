@@ -1,43 +1,34 @@
-using Million.Infrastructure;
-using Million.Infrastructure.Repositories;
 using MongoDB.Driver;
+using Million.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Cargar configuración Mongo
-var mongoSettings = builder.Configuration.GetSection("Mongo").Get<MongoOptions>();
-
-// Registrar dependencias
-builder.Services.AddSingleton<IMongoClient>(_ => new MongoClient(mongoSettings.ConnectionString));
-builder.Services.AddScoped<IPropertyRepository>(_ => new PropertyRepository(
-    new MongoClient(mongoSettings.ConnectionString), mongoSettings.Database));
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-// CORS
-builder.Services.AddCors(opt =>
+// CORS para el front en localhost:3000
+builder.Services.AddCors(options =>
 {
-    opt.AddDefaultPolicy(p =>
+    options.AddPolicy("FrontCors", p =>
         p.WithOrigins("http://localhost:3000")
          .AllowAnyHeader()
          .AllowAnyMethod());
 });
 
+// Mongo (desde appsettings.Development.json)
+var mongo = builder.Configuration.GetSection("Mongo");
+builder.Services.AddSingleton<IMongoClient>(_ => new MongoClient(mongo["ConnectionString"]!));
+builder.Services.AddSingleton(sp => sp.GetRequiredService<IMongoClient>().GetDatabase(mongo["Database"]!));
+
+// Repo
+builder.Services.AddScoped<PropertyRepository>();
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
+app.UseSwagger();
+app.UseSwaggerUI();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
-// CORS
-app.UseCors();
-
+app.UseCors("FrontCors");
 app.MapControllers();
 
 app.Run();

@@ -1,3 +1,4 @@
+// src/app/property/[id]/page.tsx
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -5,12 +6,18 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { fetchProperty, fetchProperties, type PropertyDto } from "@/app/lib/api";
+import {
+  fetchPropertyById as fetchProperty,
+  fetchProperties,
+  type PropertyDto,
+  type PropertyDetailDto,
+} from "@/app/lib/api";
 
 // --------- helpers ----------
 const isOid = (id?: string) => !!id && /^[0-9a-fA-F]{24}$/.test(id ?? "");
 const money = (v: number) =>
   new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(v);
+const placeholder = "https://picsum.photos/seed/placeholder/1200/900";
 
 // --------- page ----------
 export default function PropertyDetailPage() {
@@ -18,12 +25,10 @@ export default function PropertyDetailPage() {
   const router = useRouter();
 
   const [loading, setLoading] = useState(true);
-  const [item, setItem] = useState<PropertyDto | null>(null);
+  const [item, setItem] = useState<PropertyDetailDto | null>(null);
 
-  // lista ligera para navegar
-  const [items, setItems] = useState<{ id: string; name: string; image: string }[]>(
-    []
-  );
+  // lista ligera para navegar (prev/next + thumbnails)
+  const [items, setItems] = useState<Array<{ id: string; name: string; image: string }>>([]);
 
   // para animar entrada desde izq/der al cambiar
   const [dir, setDir] = useState<1 | -1>(1);
@@ -32,16 +37,17 @@ export default function PropertyDetailPage() {
     async (oid: string) => {
       setLoading(true);
       try {
+        // detalle
         const detail = await fetchProperty(oid);
         setItem(detail);
 
-        // pequeño índice de propiedades para prev/next + thumbnails
+        // índice de propiedades para prev/next + thumbnails
         const list = await fetchProperties({ page: 1, pageSize: 50 });
-        const mapped = list.data
+        const mapped = (list.data as PropertyDto[])
           .map((p) => ({
-            id: (p.id as string) ?? (p as any)._id ?? "",
+            id: p.id,
             name: p.name,
-            image: p.image,
+            image: p.image || placeholder,
           }))
           .filter((x) => isOid(x.id));
         setItems(mapped);
@@ -82,6 +88,9 @@ export default function PropertyDetailPage() {
     return () => window.removeEventListener("keydown", onKey);
   }, [prevId, nextId]);
 
+  // imagen principal del detalle
+  const hero = item?.images?.[0] || placeholder;
+
   return (
     <main className="mx-auto max-w-6xl p-4 sm:p-6">
       {/* Back */}
@@ -116,7 +125,7 @@ export default function PropertyDetailPage() {
               />
             ) : (
               <motion.section
-                key={(item.id as string) ?? (item as any)._id}
+                key={item.id}
                 custom={dir}
                 initial={{ opacity: 0, x: dir === 1 ? 30 : -30, scale: 0.98 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -127,7 +136,7 @@ export default function PropertyDetailPage() {
                 {/* imagen */}
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
                   <Image
-                    src={item.image}
+                    src={hero}
                     alt={item.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -144,12 +153,12 @@ export default function PropertyDetailPage() {
                   <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl">
                     {item.name}
                   </h1>
-                  <p className="text-zinc-300">{item.addressProperty}</p>
+                  <p className="text-zinc-300">{item.address}</p>
 
                   <div className="mt-1 flex flex-wrap items-center gap-3">
-                    <Badge tone="success">${money(item.priceProperty)}</Badge>
-                    <Badge>Owner: {item.idOwner}</Badge>
-                    <Badge>ID: {(item.id as string) ?? (item as any)._id}</Badge>
+                    <Badge tone="success">${money(item.price)}</Badge>
+                    <Badge>Owner: {item.owner?.name || item.idOwner}</Badge>
+                    <Badge>ID: {item.id}</Badge>
                   </div>
 
                   <div className="mt-4 flex gap-3">
@@ -189,7 +198,7 @@ export default function PropertyDetailPage() {
                   title={it.name}
                 >
                   <Image
-                    src={it.image}
+                    src={it.image || placeholder}
                     alt={it.name}
                     fill
                     sizes="112px"
