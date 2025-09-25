@@ -26,12 +26,9 @@ export default function PropertyDetailPage() {
 
   const [loading, setLoading] = useState(true);
   const [item, setItem] = useState<PropertyDetailDto | null>(null);
-
-  // lista ligera para navegar (prev/next + thumbnails)
   const [items, setItems] = useState<Array<{ id: string; name: string; image: string }>>([]);
-
-  // para animar entrada desde izq/der al cambiar
   const [dir, setDir] = useState<1 | -1>(1);
+  const [err, setErr] = useState<null | "NOT_FOUND" | "GENERIC">(null);
 
   const load = useCallback(
     async (oid: string) => {
@@ -40,8 +37,9 @@ export default function PropertyDetailPage() {
         // detalle
         const detail = await fetchProperty(oid);
         setItem(detail);
+        setErr(null);
 
-        // índice de propiedades para prev/next + thumbnails
+        // índice para prev/next + thumbnails
         const list = await fetchProperties({ page: 1, pageSize: 50 });
         const mapped = (list.data as PropertyDto[])
           .map((p) => ({
@@ -51,6 +49,14 @@ export default function PropertyDetailPage() {
           }))
           .filter((x) => isOid(x.id));
         setItems(mapped);
+      } catch (e: any) {
+        if (e?.message === "NOT_FOUND") {
+          setErr("NOT_FOUND");
+          setItem(null);
+        } else {
+          setErr("GENERIC");
+          setItem(null);
+        }
       } finally {
         setLoading(false);
       }
@@ -88,7 +94,7 @@ export default function PropertyDetailPage() {
     return () => window.removeEventListener("keydown", onKey);
   }, [prevId, nextId]);
 
-  // imagen principal del detalle
+  // imagen principal
   const hero = item?.images?.[0] || placeholder;
 
   return (
@@ -106,6 +112,18 @@ export default function PropertyDetailPage() {
         </Link>
         <span className="hidden text-xs text-zinc-500 sm:block">Use ← → to navigate</span>
       </div>
+
+      {/* mensajes de error */}
+      {err === "NOT_FOUND" && (
+        <div className="mb-4 rounded-lg border border-zinc-800 bg-zinc-900/70 p-4 text-center text-zinc-300">
+          No encontrado
+        </div>
+      )}
+      {err === "GENERIC" && (
+        <div className="mb-4 rounded-lg border border-red-800/50 bg-red-900/20 p-4 text-center text-red-300">
+          Ocurrió un error al cargar la propiedad
+        </div>
+      )}
 
       <div className="relative">
         {/* flechas */}
@@ -214,7 +232,7 @@ export default function PropertyDetailPage() {
   );
 }
 
-// --------- UI pequeñito dentro del archivo ----------
+// --------- UI pequeñito ----------
 function Badge({
   children,
   tone,
