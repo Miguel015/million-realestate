@@ -1,10 +1,10 @@
-# 🖥️ Backend - Million Real Estate
+# Backend - Million Real Estate
 
 Este documento describe la arquitectura, configuración y pruebas del backend de **Million Real Estate**.
 
 ---
 
-## 🚀 Tecnologías usadas
+## Tecnologías usadas
 - **.NET 8 / ASP.NET Core Web API**
 - **MongoDB** (almacenamiento de propiedades y dueños)
 - **Swagger** (documentación de endpoints)
@@ -13,7 +13,7 @@ Este documento describe la arquitectura, configuración y pruebas del backend de
 
 ---
 
-## 📂 Estructura del backend
+## Estructura del backend
 
 ```
 backend/
@@ -30,7 +30,7 @@ backend/
 
 ---
 
-## 🔧 Configuración
+## Configuración
 
 1. Clonar el repositorio y entrar al backend:
    ```bash
@@ -92,7 +92,7 @@ POST /api/properties
 
 ---
 
-## 🧪 Pruebas
+## Pruebas
 
 ### Unitarias (xUnit)
 ```bash
