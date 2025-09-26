@@ -5,7 +5,14 @@ Construida con **Next.js (Frontend)**, **.NET 8 (Backend)** y **MongoDB (Base de
 
 Incluye **pruebas unitarias y de integración** en backend (NUnit) y frontend (Vitest + React Testing Library).  
 
+Además, se entrega documentación técnica completa y detallada:
+
+- [Documentación Backend](docs/backend.md)
+- [Documentación Frontend](docs/frontend.md)
+- [Manual de Pruebas](docs/manual-tests.md)
+
 ---
+
 
 ## Estructura del Proyecto
 
@@ -21,6 +28,12 @@ million-realestate/
 │
 │── infra/                   # Scripts de infraestructura y seed de datos
 │   └── seed/                # Poblar MongoDB con datos iniciales
+│
+│
+│── doc/                   # Documentacion detallada
+│   └── backend              # Documentación Detallada Backend
+│   └── frontend             # Documentación Detallada Frontend
+│   └── manual-tests         # Manual de pruebas
 │
 └── README.md                # Documentación principal
 ```
