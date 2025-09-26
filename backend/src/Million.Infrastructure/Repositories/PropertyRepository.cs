@@ -1,3 +1,23 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: PropertyRepository.cs
+ * Proyecto: Million Real Estate - Backend (Infrastructure)
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Repositorio de lectura sobre MongoDB usando agregaciones en crudo (Bson).
+ * Expone:
+ *  - GetPropertiesAsync: listado con filtros, paginación y proyección a DTO.
+ *  - GetDetailAsync: detalle enriquecido con owner e imágenes habilitadas.
+ *
+ * Notas:
+ * - Se trabaja con IMongoCollection<BsonDocument> para flexibilidad de esquema.
+ * - Las proyecciones devuelven las claves en el shape esperado por los DTOs.
+ * - Se maneja Price de forma robusta (Decimal128, Int64, Int32, Double).
+ * ----------------------------------------------------------------------------
+ */
+ 
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,9 +1,20 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: PropertyRepositoryNotFoundTests.cs
+ * Proyecto: Million Real Estate - Tests
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Prueba de detalle con id inexistente: el repositorio debe devolver null.
+ * ----------------------------------------------------------------------------
+ */
+
 using Xunit;
 using FluentAssertions;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using Million.Infrastructure.Repositories;
-using Million.Tests.Helpers;
 
 namespace Million.Tests.Repositories;
 
@@ -16,14 +27,19 @@ public class PropertyRepositoryNotFoundTests : IDisposable
     {
         _repo = new PropertyRepository(_fx.Database);
 
-        // Base vacía: se inserta nada para la prueba
+        /** No se inserta data: la base queda vacía a propósito. */
     }
 
     [Fact]
     public async Task GetDetail_returns_null_for_missing_id()
     {
+        /** Arrange */
         var missing = ObjectId.GenerateNewId().ToString();
+
+        /** Act */
         var detail = await _repo.GetDetailAsync(missing);
+
+        /** Assert */
         detail.Should().BeNull();
     }
 

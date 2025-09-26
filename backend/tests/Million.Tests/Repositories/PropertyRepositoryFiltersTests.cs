@@ -1,3 +1,16 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: PropertyRepositoryFiltersTests.cs
+ * Proyecto: Million Real Estate - Tests
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Pruebas de filtrado por nombre (case-insensitive) y por rango de precio en el
+ * listado de propiedades.
+ * ----------------------------------------------------------------------------
+ */
+
 using Xunit;
 using FluentAssertions;
 using MongoDB.Bson;
@@ -19,6 +32,7 @@ namespace Million.Tests.Repositories
             var owners = _fx.Database.GetCollection<BsonDocument>("owners");
             var props  = _fx.Database.GetCollection<BsonDocument>("properties");
 
+            /** Un owner y tres propiedades con distintos nombres y precios. */
             var ownerId = ObjectId.GenerateNewId().ToString();
             owners.InsertOne(SampleDocs.Owner(ownerId, "Alice"));
 
@@ -33,8 +47,10 @@ namespace Million.Tests.Repositories
         [Fact]
         public async Task Filters_by_name_case_insensitive()
         {
+            /** Act */
             var (items, total) = await _repo.GetPropertiesAsync("azul", null, null, null, 1, 10);
 
+            /** Assert */
             total.Should().Be(1);
             items.Should().ContainSingle(x => x.Name.Contains("Azul"));
         }
@@ -42,8 +58,10 @@ namespace Million.Tests.Repositories
         [Fact]
         public async Task Filters_by_price_range()
         {
+            /** Act */
             var (items, total) = await _repo.GetPropertiesAsync(null, null, 180_000, 400_000, 1, 10);
 
+            /** Assert */
             total.Should().Be(1);
             items[0].Name.Should().Be("Hotel Azul");
             items[0].Price.Should().BeGreaterThan(0);
