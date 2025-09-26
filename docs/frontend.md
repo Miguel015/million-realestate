@@ -1,10 +1,10 @@
-# 🎨 Frontend - Million Real Estate
+# Frontend - Million Real Estate
 
 Este documento describe la arquitectura, configuración y pruebas del frontend de **Million Real Estate**.
 
 ---
 
-## 🚀 Tecnologías usadas
+## Tecnologías usadas
 - **Next.js 13 (App Router)**
 - **React 18**
 - **TypeScript**
@@ -14,7 +14,7 @@ Este documento describe la arquitectura, configuración y pruebas del frontend d
 
 ---
 
-## 📂 Estructura del frontend
+## Estructura del frontend
 
 ```
 frontend/
@@ -38,7 +38,7 @@ frontend/
 
 ---
 
-## 🔧 Configuración
+## Configuración
 
 1. Instalar dependencias:
    ```bash
@@ -63,7 +63,7 @@ frontend/
 
 ---
 
-## 🧪 Pruebas Frontend
+## Pruebas Frontend
 
 1. Ejecutar todas:
    ```bash
