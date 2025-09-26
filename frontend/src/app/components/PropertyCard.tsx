@@ -1,4 +1,17 @@
-// src/app/components/PropertyCard.tsx
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/app/components/PropertyCard.tsx
+ * Proyecto: Million Real Estate - Frontend
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Tarjeta de propiedad para el grid del Home.
+ * Muestra imagen, nombre, dirección y precio.
+ * Enlace a la página de detalle.
+ * ----------------------------------------------------------------------------
+ */
+
 "use client";
 
 import Link from "next/link";

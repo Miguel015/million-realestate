@@ -12,7 +12,7 @@ export default defineConfig({
   },
   test: {
     environment: "jsdom",
-    setupFiles: [fileURLToPath(new URL("./src/test/setup.tsx", import.meta.url))], // ← .tsx
+    setupFiles: [fileURLToPath(new URL("./src/test/setup.tsx", import.meta.url))], 
     css: true,
     globals: true,
     include: ["src/test/**/*.test.{ts,tsx}"],

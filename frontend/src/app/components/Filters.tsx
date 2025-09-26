@@ -1,3 +1,15 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/app/components/Filters.tsx
+ * Proyecto: Million Real Estate - Frontend
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Controles de búsqueda/filtrado:
+ * name, address, minPrice, maxPrice, y acciones Buscar/Limpiar.
+ * ----------------------------------------------------------------------------
+ */
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";

@@ -1,3 +1,15 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/test/api.errors.test.ts
+ * Proyecto: Million Real Estate - Frontend (Tests)
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Pruebas unitarias del cliente API.
+ * Valida el manejo de errores HTTP y el caso de 404 específico.
+ * ----------------------------------------------------------------------------
+ */
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { fetchProperties, fetchPropertyById } from "@/app/lib/api";
 

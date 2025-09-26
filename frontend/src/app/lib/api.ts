@@ -1,5 +1,17 @@
-// src/app/lib/api.ts
-
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/app/lib/api.ts
+ * Proyecto: Million Real Estate - Frontend
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Cliente HTTP del frontend. Expone funciones para consumir el backend:
+ * - fetchProperties: listado con filtros/paginación
+ * - fetchPropertyById: detalle por id
+ * Depende de NEXT_PUBLIC_API_URL para construir las URLs.
+ * ----------------------------------------------------------------------------
+ */
 // ---------- Tipos que usa tu UI ----------
 export type PropertyDto = {
   id: string;
@@ -89,5 +101,4 @@ export async function fetchPropertyById(id: string): Promise<PropertyDetailDto> 
   return res.json();
 }
 
-// alias opcional para compatibilidad si en algún lado se usa fetchProperty
 export const fetchProperty = fetchPropertyById;

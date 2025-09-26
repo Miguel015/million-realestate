@@ -1,4 +1,15 @@
-// src/test/detail.thumb-nav.test.tsx
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/test/detail.thumb-nav.test.tsx
+ * Proyecto: Million Real Estate - Frontend (Tests)
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Verifica la navegación por thumbnails (prev/next) en la página de detalle.
+ * Mockea router y lista de propiedades para simular el cambio de id.
+ * ----------------------------------------------------------------------------
+ */
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";

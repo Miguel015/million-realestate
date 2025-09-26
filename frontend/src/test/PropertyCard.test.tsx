@@ -1,3 +1,15 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/test/PropertyCard.test.tsx
+ * Proyecto: Million Real Estate - Frontend (Tests)
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Pruebas unitarias del componente PropertyCard.
+ * Verifica renderizado de nombre, dirección, precio e imagen.
+ * ----------------------------------------------------------------------------
+ */
 import { render } from "@testing-library/react";
 import { screen } from "@testing-library/dom";
 import "@testing-library/jest-dom";

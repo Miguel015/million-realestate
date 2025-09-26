@@ -1,3 +1,15 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/test/detail.placeholder.test.tsx
+ * Proyecto: Million Real Estate - Frontend (Tests)
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Verifica que la página de detalle use una imagen placeholder cuando
+ * no hay imágenes habilitadas/retornadas por la API.
+ * ----------------------------------------------------------------------------
+ */
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import React from "react";

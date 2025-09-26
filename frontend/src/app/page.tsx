@@ -1,3 +1,17 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/app/page.tsx
+ * Proyecto: Million Real Estate - Frontend
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Página de listado de propiedades.
+ * - Controla filtros (name, address, minPrice, maxPrice) con debounce.
+ * - Paginación cliente ←→ servidor.
+ * - Render de tarjetas (PropertyCard) y estados de carga/vacío.
+ * ----------------------------------------------------------------------------
+ */
 "use client";
 
 import { useEffect, useState } from "react";

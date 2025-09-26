@@ -1,4 +1,16 @@
-// src/test/property.detail.page.test.tsx
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/test/property.detail.page.test.tsx
+ * Proyecto: Million Real Estate - Frontend (Tests)
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Pruebas de la página de detalle de propiedad.
+ * Mockea navegación de Next, framer-motion y API.
+ * Verifica renderizado de datos y manejo de estado 404.
+ * ----------------------------------------------------------------------------
+ */
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 

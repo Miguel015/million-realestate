@@ -1,3 +1,15 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/test/api.fetchProperties.test.ts
+ * Proyecto: Million Real Estate - Frontend (Tests)
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Prueba unitaria de cliente HTTP (fetchProperties):
+ * valida que construye la URL con querystring y parsea la respuesta.
+ * ----------------------------------------------------------------------------
+ */
 import { fetchProperties } from "@/app/lib/api";
 
 const BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5270";

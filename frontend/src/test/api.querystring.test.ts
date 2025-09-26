@@ -1,3 +1,15 @@
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/test/api.querystring.test.ts
+ * Proyecto: Million Real Estate - Frontend (Tests)
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Pruebas unitarias del cliente API (fetchProperties).
+ * Verifica que construye correctamente la querystring según los parámetros.
+ * ----------------------------------------------------------------------------
+ */
 import { describe, it, expect, vi } from "vitest";
 import { fetchProperties } from "@/app/lib/api";
 

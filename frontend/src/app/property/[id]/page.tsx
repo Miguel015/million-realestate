@@ -1,4 +1,18 @@
-// src/app/property/[id]/page.tsx
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/app/property/[id]/page.tsx
+ * Proyecto: Million Real Estate - Frontend
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Página de detalle de propiedad.
+ * - Carga detalle por id (con validación de ObjectId).
+ * - Navegación por thumbnails (prev/next).
+ * - Placeholders si no hay imágenes.
+ * ----------------------------------------------------------------------------
+ */
+
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";

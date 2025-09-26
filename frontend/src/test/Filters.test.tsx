@@ -1,4 +1,15 @@
-// src/test/Filters.test.tsx
+/**
+ * ----------------------------------------------------------------------------
+ * Autor: Miguel Andrés Suárez
+ * Fecha: 2025-09-25
+ * Archivo: src/test/Filters.test.tsx
+ * Proyecto: Million Real Estate - Frontend (Tests)
+ * ----------------------------------------------------------------------------
+ * Descripción:
+ * Pruebas unitarias del componente Filters.
+ * Verifica llamadas a handlers onSearch y onClear, y a los setters de inputs.
+ * ----------------------------------------------------------------------------
+ */
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
