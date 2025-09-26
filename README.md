@@ -5,11 +5,15 @@ Construida con **Next.js (Frontend)**, **.NET 8 (Backend)** y **MongoDB (Base de
 
 Incluye **pruebas unitarias y de integración** en backend (NUnit) y frontend (Vitest + React Testing Library).  
 
-Además, se entrega documentación técnica completa y detallada:
+Este repositorio incluye documentación técnica organizada en secciones:  
 
 - [Documentación Backend](docs/backend.md)
 - [Documentación Frontend](docs/frontend.md)
 - [Manual de Pruebas](docs/manual-tests.md)
+
+Además, puedes acceder a la **documentación extendida con diagramas, flujos de arquitectura y casos de uso completos** en el siguiente enlace externo:  
+
+[Documentación Detallada del Proyecto](https://deepwiki.com/Miguel015/million-realestate)
 
 ---
 
