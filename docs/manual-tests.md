@@ -1,10 +1,10 @@
-# 🧪 Manual de Pruebas - Million Real Estate
+# Manual de Pruebas - Million Real Estate
 
 Este documento describe los **casos de prueba manuales** para validar el sistema.
 
 ---
 
-## 🔹 Backend (API)
+## Backend (API)
 
 ### ✅ CP01 - Listar propiedades
 1. Ejecutar `GET /api/properties`.
@@ -24,7 +24,7 @@ Este documento describe los **casos de prueba manuales** para validar el sistema
 
 ---
 
-## 🔹 Frontend (UI)
+## Frontend (UI)
 
 ### ✅ CP05 - Cargar listado inicial
 1. Abrir `http://localhost:3000`.
@@ -48,7 +48,7 @@ Este documento describe los **casos de prueba manuales** para validar el sistema
 
 ---
 
-## 🔹 QA Técnica (Automatizadas)
+## QA Técnica (Automatizadas)
 
 - Unit tests backend (`dotnet test`).  
 - Unit tests frontend (`npx vitest`).  
@@ -56,7 +56,7 @@ Este documento describe los **casos de prueba manuales** para validar el sistema
 
 ---
 
-## 🔹 Casos de error
+## Casos de error
 
 ### ✅ CP10 - API retorna 404
 1. Abrir `http://localhost:3000/property/{id_inexistente}`.
